@@ -1,0 +1,2 @@
+# magnitudinis
+Portfolio Management App
