@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('magnitudinis App', () => {
+describe('firebase App', () => {
   let page: AppPage;
 
   beforeEach(() => {

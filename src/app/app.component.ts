@@ -1,25 +1,25 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Directive } from '@angular/core';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
-declare var $: any;
+import {
+  MultiselectDropdownModule,
+  IMultiSelectSettings,
+  IMultiSelectTexts,
+  IMultiSelectOption
+} from 'angular-2-dropdown-multiselect';
+
+import 'rxjs/add/operator/toPromise';
+
+import { GridOptions } from 'ag-grid';
+import { FirebaseComponent } from './firebase/firebase.component';
 
 @Component({
-    selector: 'app-my-app',
-    templateUrl: './app.component.html'
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
 })
 
-export class AppComponent implements OnInit {
-    constructor(private elRef: ElementRef) {}
-    ngOnInit() {
-        $.material.init();
-        const body = document.getElementsByTagName('body')[0];
-        const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
-        if (isWindows) {
-           // if we are on windows OS we activate the perfectScrollbar function
-            body.classList.add('perfect-scrollbar-on');
-        } else {
-            body.classList.add('perfect-scrollbar-off');
-        }
-        $.material.init();
-    }
+export class AppComponent {
+  constructor() {
+  }
 }

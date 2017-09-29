@@ -1,37 +1,38 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
-import { RouterModule } from '@angular/router';
-import { HttpModule } from '@angular/http';
-import { APP_BASE_HREF } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AgGridModule } from 'ag-grid-angular';
+
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
-
-import { SidebarModule } from './sidebar/sidebar.module';
-import { FooterModule } from './shared/footer/footer.module';
-import { NavbarModule} from './shared/navbar/navbar.module';
-import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
-import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
-
-import { AppRoutes } from './app.routing';
+import { FirebaseComponent } from './firebase/firebase.component';
+import { AgGridComponent } from './ag-grid/ag-grid.component';
 
 @NgModule({
-    imports:      [
-        CommonModule,
-        BrowserAnimationsModule,
-        FormsModule,
-        RouterModule.forRoot(AppRoutes, {useHash: true}),
-        HttpModule,
-        SidebarModule,
-        NavbarModule,
-        FooterModule    
-    ],
-    declarations: [
-        AppComponent,
-        AdminLayoutComponent,
-        AuthLayoutComponent
-    ],
-    bootstrap:    [ AppComponent ]
+  declarations: [
+    AppComponent,
+    FirebaseComponent,
+    AgGridComponent
+  ],
+  imports: [
+    FormsModule,
+    BrowserModule,
+    ReactiveFormsModule,
+    MultiselectDropdownModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule, // imports firebase/database, only needed for database features
+    AngularFireAuthModule, // imp
+    AgGridModule.withComponents([
+      AgGridComponent
+    ])
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
