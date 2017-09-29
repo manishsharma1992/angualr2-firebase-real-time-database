@@ -1,0 +1,84 @@
+<div class="wrapper wrapper-full-page">
+    <nav class="navbar navbar-primary navbar-transparent navbar-absolute">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-example">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/#/dashboard">Magnitudinis</a>
+            </div>
+            <div class="collapse navbar-collapse" id="menu-example">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class=" active ">
+                        <a routerLink = "/register">
+                            <i class="material-icons">person_add</i> Register
+                        </a>
+                    </li>
+                    <li class="">
+                        <a routerLink = "/login">
+                            <i class="material-icons">fingerprint</i> Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="full-page register-page" filter-color="black">
+        <div class="content">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                    <form class="form" method="" action="">
+                            <div class="card card-signup">
+                                    <div class="card-header text-center" data-background-color="purple">
+                                            <h4 class="card-title">Register</h4>
+                                    </div>
+                                    <div class="card-content">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="material-icons">face</i>
+                                                </span>
+                                                <input type="text" class="form-control" placeholder="First Name...">
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="material-icons">email</i>
+                                                </span>
+                                                <input type="text" class="form-control" placeholder="Email...">
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="material-icons">lock_outline</i>
+                                                </span>
+                                                <input type="password" placeholder="Password..." class="form-control" />
+                                            </div>
+                                            <!-- If you want to add a checkbox to this form, uncomment this code -->
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="optionsCheckboxes" checked> I agree to the
+                                                    <a href="#something">terms and conditions</a>.
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="footer text-center">
+                                            <a href="#pablo" class="btn btn-primary btn-round">Get Started</a>
+                                        </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <p class="copyright pull-right">
+                    &copy;
+                    {{test | date: 'yyyy'}}
+                    <a href="https://www.creative-tim.com">Magnitudinis</a>
+                </p>
+            </div>
+        </footer>
+        <div class="full-page-background" style="background-image: url(../../../assets/img/register.jpeg) "></div>
+    </div>
+</div>
